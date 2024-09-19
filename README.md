@@ -1,242 +1,272 @@
 # Aula-git
 
-Comandos
-git add
-Move as alterações do diretório de trabalho para a área de staging. Assim, você tem a oportunidade de preparar um instantâneo antes de realizar o commit ao histórico oficial.
+GIT
+Estados
+Modificado (modified);
+Preparado (staged/index)
+Consolidado (comitted);
+Ajuda
+Geral
+git help
+Comando específico
+git help add
+git help commit
+git help <qualquer_comando_git>
+Configuração
+Geral
+As configurações do GIT são armazenadas no arquivo .gitconfig localizado dentro do diretório do usuário do Sistema Operacional (Ex.: Windows: C:\Users\Documents and Settings\Leonardo ou *nix /home/leonardo).
 
-Tutoriais relacionados
-Salvar alterações: git add
-Aprenda o Git com o Bitbucket Cloud: copie o Repositório do Git e adicione arquivos
-Usar ramificações: git merge
-Inspecionar repositório: git status
-Git Branch
-Esse comando é a ferramenta de administração de ramificações de uso geral. Permite criar ambientes de desenvolvimento isolados em um único repositório.
+As configurações realizadas através dos comandos abaixo serão incluídas no arquivo citado acima.
 
-Tutoriais relacionados
-Usar ramificações: git branch
-Usar ramificações: git checkout
-Usar ramificações: git merge
-Aprenda o Git com o Bitbucket Cloud: use uma ramificação do Git para fazer o merge de um arquivo
-O que faz o Git Checkout
-Além de verificar commits antigos e revisões de arquivos antigos, o git checkout também é a forma de navegar pelas ramificações existentes. Combinado com os comandos básicos do Git, é a maneira de trabalhar em determinada linha de desenvolvimento.
+Setar usuário
+git config --global user.name "Leonardo Comelli"
+Setar email
+git config --global user.email leonardo@software-ltda.com.br
+Setar editor
+git config --global core.editor vim
+Setar ferramenta de merge
+git config --global merge.tool vimdiff
+Setar arquivos a serem ignorados
+git config --global core.excludesfile ~/.gitignore
+Listar configurações
+git config --list
+Ignorar Arquivos
+Os nomes de arquivos/diretórios ou extensões de arquivos listados no arquivo .gitignore não serão adicionados em um repositório. Existem dois arquivos .gitignore, são eles:
 
-Tutoriais relacionados
-Usar ramificações: git checkout
-Desfazer alterações: git checkout
-Comparar fluxos de trabalho: fluxo de trabalho do Gitflow
-Git Clean
-Remove os arquivos não monitorados do diretório de trabalho. Esse é o correspondente lógico do git reset, que (em geral) só opera em arquivos monitorados.
+Geral: Normalmente armazenado no diretório do usuário do Sistema Operacional. O arquivo que possui a lista dos arquivos/diretórios a serem ignorados por todos os repositórios deverá ser declarado conforme citado acima. O arquivo não precisa ter o nome de .gitignore.
 
-Tutoriais relacionados
-Desfazer alterações: git clean
-git clone
-Cria cópia de um Repositório do Git existente. A clonagem é o modo mais comum dos desenvolvedores obterem uma cópia de trabalho de um repositório central.
+Por repositório: Deve ser armazenado no diretório do repositório e deve conter a lista dos arquivos/diretórios que devem ser ignorados apenas para o repositório específico.
 
-Tutoriais relacionados
-Git LFS
-Comparar fluxos de trabalho: fluxo de trabalho de bifurcação
-Configurar repositório: git clone
-Git commit
-Faz um commit do instantâneo preparado no histórico do projeto. Combinado com git add, esse processo define o fluxo de trabalho básico para todos os usuários do Git.
-
-Tutoriais relacionados
-Usar ramificações: git merge
-Reescrever o histórico: git commit --amend
-Aprenda o Git com o Bitbucket Cloud: copie o Repositório do Git e adicione arquivos
-Salvar alterações: git add
-git commit --amend
-Informação da marcação -- amend ao git commit permite corrigir o commit mais recente. Isso é muito útil quando você esquece de preparar um arquivo ou para omitir informações importantes da mensagem do commit.
-
-Tutoriais relacionados
-Reescrever o histórico: git commit --amend
-git config
-Uma maneira conveniente de definir opções de configuração para a instalação do Git. Em geral, sua utilização só é necessária de modo imediato após a instalação do Git em máquina de desenvolvimento nova.
-
-Tutoriais relacionados
-Configurar repositório: git config3
-Git LFS
-Instalar o Git: instale o Git no Mac OS X
-Instalar o Git: instale o Git no Linux
-git fetch
-A busca faz o download a partir da ramificação de outro repositório, junto com todos os commits e arquivos associados. Mas, não tenta integrar nada em o repositório local. Assim, você tem a oportunidade de inspecionar as alterações antes de fazer o merge no projeto.
-
-Tutoriais relacionados
-Sincronizar: git fetch
-Refs e o Reflog: Refspecs
-Sincronizar: git pull
+Repositório Local
+Criar novo repositório
 git init
-Inicializa novo repositório do Git. Se você quiser colocar um projeto sob controle de revisão, este é o primeiro comando que você precisa aprender.
-
-Tutoriais relacionados
-Configurar repositório: git init
-git log
-Permite explorar as revisões anteriores de determinado projeto. Ele oferece várias opções de formatação para exibir o commit de instantâneos.
-
-Tutoriais relacionados
-Inspecionar repositório: git log
-Registro avançado do Git: filtrar o histórico de commits
-Registro avançado do Git: formatação da saída do log
-Tutoriais avançados do Git: visão geral
-Git merge
-Uma maneira poderosa de integrar alterações de ramificações divergentes. Após bifurcar o histórico do projeto com o git branch, o git merge permite unificar o histórico de novo.
-
-Tutoriais relacionados
-Merge versus rebase: passo a passo do fluxo de trabalho
-Usar ramificações: git merge
-Comparar fluxos de trabalho: fluxo de trabalho do Gitflow
-Merge versus rebase: visão geral conceitual
-git pull
-É a versão automatizada do git fetch. Faz o download de ramificação de um repositório remoto e faz a mesclagem imediata na ramificação atual. É o equivalente Git do svn update.
-
-Tutoriais relacionados
-Sincronizar: git pull
-Comparação de fluxos de trabalho: fluxo de trabalho centralizado
-Git LFS
-Comparar fluxos de trabalho: fluxo de trabalho de bifurcação
-Git push
-É o oposto de buscar (com algumas ressalvas). Permite que você mova uma ramificação local para outro repositório, o que é um modo conveniente de publicar as contribuições. É semelhante ao svn commit, mas envia uma série de commits em vez de um único conjunto de alterações.
-
-Tutoriais relacionados
-Sincronizar: git push
-Refs e o Reflog: Refspecs
-Comparar fluxos de trabalho: fluxo de trabalho do Gitflow
-Git LFS
-git rebase
-Permite mover ramificações, o que ajuda a evitar commits de merge desnecessários. A história linear resultante é, em geral, muito mais fácil de entender e explorar.
-
-Tutoriais relacionados
-Merge versus rebase: passo a passo do fluxo de trabalho
-Reescrever o histórico: git rebase -i
-Merge versus rebase: visão geral conceitual
-Reescrever o histórico: git rebase
-git rebase -i
-A marcação -i é usada para iniciar uma sessão de rebase interativa. Ela apresenta todos os benefícios de um rebase normal, porém, dá a oportunidade de adicionar, editar ou excluir commits durante o processo.
-
-Tutoriais relacionados
-Reescrever o histórico: git rebase -i
-git reflog
-O Git mantém o controle das atualizações na ponta das ramificações usando um mecanismo chamado reflog. Ele permite retornar aos conjuntos de alterações mesmo que não estejam referenciados por nenhuma ramificação ou marcação.
-
-Tutoriais relacionados
-Reescrever o histórico: git reflog
-git remote
-Uma ferramenta prática para administrar conexões remotas. Em vez de passar o URL completo para os comandos fetch, pull e push, ele permite usar um atalho mais significativo.
-
-Tutoriais relacionados
-Sincronizar: git remote
-git reset
-Desfaz as alterações nos arquivos no diretório de trabalho. A redefinição permite limpar ou remover por completo as alterações que não foram enviadas a um repositório público.
-
-Tutoriais relacionados
-Desfazer alterações: git reset
-Reset, Checkout e Revert: operações no nível do commit
-Redefinir, fazer checkout e reverter: operações em nível de arquivo
-Desfazer alterações: git clean
-git revert
-Desfaz o commit de um instantâneo. Ao identificar um commit com falha, uma maneira fácil e segura de realizar a sua remoção da base de código é por meio da reversão.
-
-Tutoriais relacionados
-Desfazer alterações: git revert
-Reset, Checkout e Revert: operações no nível do commit
-Reset, Checkout e Revert: resumo
+Verificar estado dos arquivos/diretórios
 git status
-Exibe o estado do diretório de trabalho e o instantâneo preparado. Utilize essa opção em conjunto com os comandos git add e o git commit para ver com precisão o que vai ser incluído no próximo instantâneo.
+Adicionar arquivo/diretório (staged area)
+Adicionar um arquivo em específico
+git add meu_arquivo.txt
+Adicionar um diretório em específico
+git add meu_diretorio
+Adicionar todos os arquivos/diretórios
+git add .	
+Adicionar um arquivo que esta listado no .gitignore (geral ou do repositório)
+git add -f arquivo_no_gitignore.txt
+Comitar arquivo/diretório
+Comitar um arquivo
+git commit meu_arquivo.txt
+Comitar vários arquivos
+git commit meu_arquivo.txt meu_outro_arquivo.txt
+Comitar informando mensagem
+git commit meuarquivo.txt -m "minha mensagem de commit"
+Remover arquivo/diretório
+Remover arquivo
+git rm meu_arquivo.txt
+Remover diretório
+git rm -r diretorio
+Visualizar histórico
+Exibir histórico
+git log
+Exibir histórico com diff das duas últimas alterações
+git log -p -2
+Exibir resumo do histórico (hash completa, autor, data, comentário e qtde de alterações (+/-))
+git log --stat
+Exibir informações resumidas em uma linha (hash completa e comentário)
+git log --pretty=oneline
+Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)
+git log --pretty=format:"%h - %an, %ar : %s"
+%h: Abreviação do hash;
+%an: Nome do autor;
+%ar: Data;
+%s: Comentário.
+Verifique as demais opções de formatação no Git Book
 
-Tutoriais relacionados
-Inspecionar repositório: git status
-Git stash
-Aprenda o Git com o Bitbucket Cloud: use uma ramificação do Git para fazer o merge de um arquivo
-Aprenda o Git com o Bitbucket Cloud: copie o Repositório do Git e adicione arquivos
-Terminologia
-Ramificação
-Uma ramificação representa uma linha de desenvolvimento independente. As ramificações funcionam como uma abstração dos processos de edição/preparação/commit discutidos em Noções básicas de Git, o primeiro módulo desta série. Você pode pensar neles como uma maneira de solicitar um novo diretório de trabalho, área de staging e histórico do projeto. Novos commits são registrados no histórico da ramificação atual, o que resulta em uma bifurcação no histórico do projeto.
+Exibir histório de um arquivo específico
+git log -- <caminho_do_arquivo>
+Exibir histórico de um arquivo específico que contêm uma determinada palavra
+git log --summary -S<palavra> [<caminho_do_arquivo>]
+Exibir histórico modificação de um arquivo
+git log --diff-filter=M -- <caminho_do_arquivo>
+O pode ser substituido por: Adicionado (A), Copiado (C), Apagado (D), Modificado (M), Renomeado (R), entre outros.
+Exibir histório de um determinado autor
+git log --author=usuario
+Exibir revisão e autor da última modificação de uma bloco de linhas
+git blame -L 12,22 meu_arquivo.txt 
+Desfazendo operações
+Desfazendo alteração local (working directory)
+Este comando deve ser utilizando enquanto o arquivo não foi adicionado na staged area.
 
-Tutoriais relacionados
-Aprenda o Git com o Bitbucket Cloud: use uma ramificação do Git para fazer o merge de um arquivo
-Comparar fluxos de trabalho: fluxo de trabalho do Gitflow
-Usar ramificações: git branch
-Comparação de fluxos de trabalho: fluxo de trabalho da ramificação de funções
-Fluxo de trabalho centralizado
-Se seus desenvolvedores já estão confortáveis com o Subversion, o fluxo de trabalho centralizado permite a você experimentar os benefícios do Git sem precisar se adaptar a um processo todo novo. Também serve como uma transição fácil para fluxos de trabalho mais orientados ao Git.
+git checkout -- meu_arquivo.txt
+Desfazendo alteração local (staging area)
+Este comando deve ser utilizando quando o arquivo já foi adicionado na staged area.
 
-Tutoriais relacionados
-Comparação de fluxos de trabalho: fluxo de trabalho da ramificação de funções
-Fluxo de trabalho de ramificação de função
-O fluxo de trabalho de ramificação de funções se baseia se no fluxo de trabalho centralizado, encapsulando novas funções em ramificações dedicadas. Essa ação permite a utilização de solicitações pull como forma de discutir as alterações antes que elas sejam integradas ao projeto oficial.
+git reset HEAD meu_arquivo.txt
+Se o resultado abaixo for exibido, o comando reset não alterou o diretório de trabalho.
 
-Tutoriais relacionados
-Comparar fluxos de trabalho: fluxo de trabalho do Gitflow
-Como fazer uma solicitação pull: como funciona
-Comparação de fluxos de trabalho: fluxo de trabalho da ramificação de funções
-Por que usar o Git na empresa: Git para desenvolvedores
-Bifurcação
-Em vez de usar um único repositório do lado do servidor para atuar como a base de código "central", a bifurcação proporciona a todos os desenvolvedores um repositório do lado do servidor. Isso significa que cada colaborador não tem um, mas dois repositórios do Git: um local privado e um público do lado do servidor.
+Unstaged changes after reset:
+M	meu_arquivo.txt
+A alteração do diretório pode ser realizada através do comando abaixo:
 
-Tutoriais relacionados
-Comparar fluxos de trabalho: fluxo de trabalho de bifurcação
-Como fazer uma solicitação pull: como funciona
-Saiba tudo sobre o Gitflow Workflow
-O fluxo de trabalho do Gitflow simplifica o ciclo de lançamento usando ramificações isoladas para desenvolvimento de funções, preparação de lançamento e manutenção. Seu modelo de ramificação estrito também fornece uma estrutura indispensável para projetos maiores.
+git checkout meu_arquivo.txt
+Repositório Remoto
+Exibir os repositórios remotos
+git remote
 
-Tutoriais relacionados
-Como fazer uma solicitação pull: como funciona
-Comparar fluxos de trabalho: fluxo de trabalho do Gitflow
-HEAD
-A maneira do Git de se referir ao snapshot atual. Na estrutura interna, o comando git checkout apenas atualiza o HEAD para apontar para a ramificação ou commit especificado. Ao apontar para uma ramificação, o Git não reclama, mas quando você confirma um commit, ela muda para o estado "HEAD desvinculado".
+git remote -v
+Vincular repositório local com um repositório remoto
+git remote add origin git@github.com:leocomelli/curso-git.git
+Exibir informações dos repositórios remotos
+git remote show origin
+Renomear um repositório remoto
+git remote rename origin curso-git
+Desvincular um repositório remoto
+git remote rm curso-git
+Enviar arquivos/diretórios para o repositório remoto
+O primeiro push de um repositório deve conter o nome do repositório remoto e o branch.
 
-Tutoriais relacionados
-Refs e o Reflog: Refs especiais
-Hooks do Git: hooks locais
-Refs e o Reflog: o Reflog
-Reset, Checkout e Revert: operações no nível do commit
-Hook
-Um script automático é executado toda vez que um evento específico ocorre em um repositório do Git. Os hooks permitem personalizar o comportamento interno do Git e acionar ações personalizáveis em pontos-chave do ciclo de vida do desenvolvimento.
+git push -u origin master
+Os demais pushes não precisam dessa informação
 
-Tutoriais relacionados
-Hooks do Git: visão geral conceitual
-Hooks do Git: hooks locais
-Hooks do Git: hooks do lado do servidor
-Hooks do Git
-Principal
-A ramificação de desenvolvimento padrão. Sempre que você cria um repositório do Git, uma ramificação chamada "main" é criada e passa a ser a ramificação ativa.
+git push
+Atualizar repositório local de acordo com o repositório remoto
+Atualizar os arquivos no branch atual
+git pull
+Buscar as alterações, mas não aplica-las no branch atual
+git fetch
+Clonar um repositório remoto já existente
+git clone git@github.com:leocomelli/curso-git.git
+Tags
+Criando uma tag leve
+git tag vs-1.1
+Criando uma tag anotada
+git tag -a vs-1.1 -m "Minha versão 1.1"
+Criando uma tag assinada
+Para criar uma tag assinada é necessário uma chave privada (GNU Privacy Guard - GPG).
 
-Tutoriais relacionados
-Comparar fluxos de trabalho: fluxo de trabalho do Gitflow
-Comparação de fluxos de trabalho: fluxo de trabalho da ramificação de funções
-Git stash
-Aprenda o Git com o Bitbucket Cloud: use uma ramificação do Git para fazer o merge de um arquivo
-Solicitação pull
-As solicitações pull são uma função que facilita a colaboração dos desenvolvedores usando o Bitbucket. Elas oferecem uma interface da web fácil de usar para discutir as mudanças propostas antes de fazer a integração ao projeto oficial.
+git tag -s vs-1.1 -m "Minha tag assinada 1.1"
+Criando tag a partir de um commit (hash)
+git tag -a vs-1.2 9fceb02
+Criando tags no repositório remoto
+git push origin vs-1.2
+Criando todas as tags locais no repositório remoto
+git push origin --tags
+Branches
+O master é o branch principal do GIT.
 
-Tutoriais relacionados
-Como fazer uma solicitação pull: como funciona
-Como fazer uma solicitação pull: exemplo
-Comparação de fluxos de trabalho: fluxo de trabalho da ramificação de funções
-Saiba mais sobre a revisão de código no Bitbucket Cloud: criar uma solicitação pull
-Repositório
-Uma coleção de commits, ramificações e marcações para identificar commits.
+O HEAD é um ponteiro especial que indica qual é o branch atual. Por padrão, o HEAD aponta para o branch principal, o master.
 
-Tutoriais relacionados
-Comparar fluxos de trabalho: fluxo de trabalho de bifurcação
-Aprenda o Git com o Bitbucket Cloud: criar um Repositório do Git
-Git LFS
-Marcação
-Uma referência usada em geral para marcar um ponto específico na cadeia de confirmações. Ao contrário de um head, uma marcação não é atualizada pelo comando commit.
+Criando um novo branch
+git branch bug-123
+Trocando para um branch existente
+git checkout bug-123
+Neste caso, o ponteiro principal HEAD esta apontando para o branch chamado bug-123.
 
-Tutoriais relacionados
-Converter
-Desfazer alterações: git reset
-Git stash
-Salvar alterações: git add
-Controle de versão
-Um sistema que registra alterações em um arquivo ou conjunto de arquivos ao longo do tempo para que você possa recuperar versões específicas quando necessário.
+Criar um novo branch e trocar
+git checkout -b bug-456
+Voltar para o branch principal (master)
+git checkout master
+Resolver merge entre os branches
+git merge bug-123
+Para realizar o merge, é necessário estar no branch que deverá receber as alterações. O merge pode automático ou manual. O merge automático será feito em arquivos textos que não sofreram alterações nas mesmas linhas, já o merge manual será feito em arquivos textos que sofreram alterações nas mesmas linhas.
 
-Tutoriais relacionados
-O que é controle de versão
-O que é controle de versão: benefícios do controle de versão
-O que é Git
-Árvore de trabalho
-A árvore dos arquivos que foram confirmados de verdade, em geral contendo o conteúdo da árvore de HEAD commit e quaisquer alterações locais que você fez, mas ainda não confirmou.
+A mensagem indicando um merge manual será:
 
-Tutoriais relacionados
-Git stash
+Automerging meu_arquivo.txt
+CONFLICT (content): Merge conflict in meu_arquivo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+Apagando um branch
+git branch -d bug-123
+Listar branches
+Listar branches
+git branch
+Listar branches com informações dos últimos commits
+git branch -v
+Listar branches que já foram fundidos (merged) com o master
+git branch --merged
+Listar branches que não foram fundidos (merged) com o master
+git branch --no-merged
+Criando branches no repositório remoto
+Criando um branch remoto com o mesmo nome
+git push origin bug-123
+Criando um branch remoto com nome diferente
+git push origin bug-123:new-branch
+Baixar um branch remoto para edição
+git checkout -b bug-123 origin/bug-123
+Apagar branch remoto
+git push origin:bug-123
+Rebasing
+Fazendo o rebase entre um o branch bug-123 e o master.
+
+git checkout experiment
+
+git rebase master
+Mais informações e explicações sobre o Rebasing
+
+###Stash
+
+Para alternar entre um branch e outro é necessário fazer o commit das alterações atuais para depois trocar para um outro branch. Se existir a necessidade de realizar a troca sem fazer o commit é possível criar um stash. O Stash como se fosse um branch temporário que contem apenas as alterações ainda não commitadas.
+
+Criar um stash
+git stash
+Listar stashes
+git stash list
+Voltar para o último stash
+git stash apply
+Voltar para um stash específico
+git stash apply stash@{2}
+Onde 2 é o indíce do stash desejado.
+
+Criar um branch a partir de um stash
+git stash branch meu_branch
+Reescrevendo o histórico
+Alterando mensagens de commit
+git commit --amend -m "Minha nova mensagem"
+Alterar últimos commits
+Alterando os três últimos commits
+
+git rebase -i HEAD~3
+O editor de texto será aberto com as linhas representando os três últimos commits.
+
+pick f7f3f6d changed my name a bit
+pick 310154e updated README formatting and added blame
+pick a5f4a0d added catfile
+Altere para edit os commits que deseja realizar alterações.
+
+edit f7f3f6d changed my name a bit
+pick 310154e updated README formatting and added blame
+pick a5f4a0d added catfile
+Feche o editor de texto.
+
+Digite o comando para alterar a mensagem do commit que foi marcado como edit.
+
+git commit –amend -m “Nova mensagem”
+Aplique a alteração
+
+git rebase --continue
+Atenção: É possível alterar a ordem dos commits ou remover um commit apenas mudando as linhas ou removendo.
+
+Juntando vários commits
+Seguir os mesmos passos acima, porém marcar os commtis que devem ser juntados com *squash
+
+Remover todo histórico de um arquivo
+git filter-branch --tree-filter 'rm -f passwords.txt' HEAD
+Bisect
+O bisect (pesquisa binária) é útil para encontrar um commit que esta gerando um bug ou uma inconsistência entre uma sequência de commits.
+
+Iniciar pequinsa binária
+git bisect start
+Marcar o commit atual como ruim
+git bisect bad
+Marcar o commit de uma tag que esta sem o bug/inconsistência
+git bisect good vs-1.1
+Marcar o commit como bom
+O GIT irá navegar entre os commits para ajudar a indentificar o commit que esta com o problema. Se o commit atual não estiver quebrado, então é necessário marca-lo como bom.
+
+git bisect good
+Marcar o commit como ruim
+Se o commit estiver com o problema, então ele deverá ser marcado como ruim.
+
+git bisect bad
+Finalizar a pesquisa binária
+Depois de encontrar o commit com problema, para retornar para o HEAD utilize:
+
+git bisect reset'
