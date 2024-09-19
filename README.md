@@ -269,4 +269,4 @@ git bisect bad
 Finalizar a pesquisa binária
 Depois de encontrar o commit com problema, para retornar para o HEAD utilize:
 
-git bisect reset'
+git bisect reset
